@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+
+    <title>panel</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-Bx4pytHkyTDy3aJKjGkGoHPt3tvv6zlwwjc3iqN7ktaiEMLDPqLSZYts2OjKcBx1" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="font-size: 30px">
+    <a class="navbar-brand" style="font-size: 30px; color: brown; font-weight: bold" href="#">SmartHome <i class="fal fa-swords" style="font-weight: bold"></i></a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for("logout") }}" style=" color: brown; font-weight: bold;font-size: 20px">sign out <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+</nav>
+
+<div class="jumbotron text-center">
+
+    <div style="text-align: center">
+        <h1>Welcome back home</h1>
+        <h2>{{current_user.id }}!</h2>
+        <h4 style="color: darkgray">Your device is in {{current_user.city }}, {{ current_user.state }}</h4>
+    </div>
+
+</div>
+
+<style>
+    .col-sm-4{
+        margin-top: 5%;
+    }
+</style>
+<div class="container" style="text-align: center">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Weather</h3>
+        <i>Your suburb is </i>
+        <i style="font-weight: bold; color: brown">{{ weather }} </i><br>
+      <p>The temperature is {{ temperature }} ℃</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Power Rate</h3>
+        <i>Power rate in </i>
+        <i style="font-weight: normal; color: darkgray">{{ current_user.city }}, {{ current_user.state }}</i><br>
+      is
+        <i style="font-weight: normal; color: brown">: ${{ power_rate }}</i>
+    </div>
+    <div class="col-sm-4">
+      <h3>Control your Device</h3>
+        <p> By analysing all above data,</p>
+        <i> we reconmand you to</i><i style="font-weight: bold; color: brown">  enable  </i><i>solar charging</i><br><br>
+      <input id="toggle-two" style="border: darkgray solid 2px;" type="checkbox" checked data-toggle="toggle" data-on="Enabled" data-off="Disabled" data-onstyle="success" data-offstyle="danger">
+
+
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+<footer style="text-align: center; margin: 5% 0 1% 0;  bottom: 0; width: 100%;">
+    <i  style="color: darkgray; position: relative">All rights reserved to Smart Home Ptd,ltd</i>
+</footer>
+
+</html>

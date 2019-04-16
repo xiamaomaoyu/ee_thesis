@@ -1,0 +1,63 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="/static/css/login.css" rel="stylesheet" id="login-css">
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container login-container">
+    <div class="row">
+        <div class="col-md-6 login-form-1">
+            <h3>Login</h3>
+            <form method="post" action="{{ url_for("login") }}">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Your Email *" name="username" value=""/>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Your Password *" name="password" value=""/>
+                </div>
+                {% if error %}
+                    <font color="white" style="margin-bottom: 10px">Invalid username or password</font>
+                {% endif %}
+                <div class="form-group">
+                    <input type="submit" class="btnSubmit" name="login"/>
+                </div>
+            </form>
+            <div class="form-group">
+                <a href="#" class="btnForgetPwd">Forget Password?</a>
+            </div>
+
+
+        </div>
+        <div class="col-md-6 login-form-2">
+            <div class="login-logo">
+                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+            </div>
+            <h3>Sign up</h3>
+            <form method="post" action="{{ url_for("register") }}">
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Your Email *" name="username" value=""/>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Your Password *" name="password" value=""/>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Your City *" name="city" value=""/>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Your State *" name="state" value=""/>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btnSubmit" name="register"/>
+                </div>
+            </form>
+            <div class="form-group">
+
+                <a href="#" class="btnForgetPwd" value="Login">Forget Password?</a>
+            </div>
+
+        </div>
+    </div>
+</div>
