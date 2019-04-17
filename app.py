@@ -47,7 +47,6 @@ def login():
 
 @app.route('/register', methods=["POST"])
 def register():
-    print(request.form)
     user = User(request.form)
     user.addUser()
     login_user(user)
@@ -73,4 +72,4 @@ def logout():
 
 
 if __name__ == '__main__':
-    app.run(debug=True,port=5001)
+    app.run(port=80,host='0.0.0.0')
